@@ -63,7 +63,7 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin {
                 while (true) {
                     try {
                         await module.StartAsync(
-                            "supervisor", config.GetValue<string>("site", null));
+                            "supervisor", config.GetValue<string>("site", null), "OpcTwin");
 #if DEBUG
                         if (!Console.IsInputRedirected) {
                             Console.WriteLine("Press any key to exit...");
