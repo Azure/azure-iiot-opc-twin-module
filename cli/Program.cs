@@ -180,7 +180,7 @@ Options:
                 throw new ArgumentNullException(nameof(deviceId));
             }
             if (string.IsNullOrEmpty(moduleId)) {
-                throw new ArgumentNullException(nameof(moduleId));
+                moduleId = "opctwin";
             }
             var logger = new ConsoleLogger(null, LogLevel.Error);
             var registry = new IoTHubServiceHttpClient(new HttpClient(logger),
@@ -199,7 +199,7 @@ Options:
                 throw new ArgumentNullException(nameof(deviceId));
             }
             if (string.IsNullOrEmpty(moduleId)) {
-                throw new ArgumentNullException(nameof(moduleId));
+                moduleId = "opctwin";
             }
             var logger = new ConsoleLogger(null, LogLevel.Error);
             var registry = new IoTHubServiceHttpClient(new HttpClient(logger),

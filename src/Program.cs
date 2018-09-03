@@ -73,7 +73,6 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin {
                         }
 #endif
                         await tcs.Task;
-                        return;
                     }
                     catch (Exception ex) {
                         var logger = hostScope.Resolve<ILogger>();
