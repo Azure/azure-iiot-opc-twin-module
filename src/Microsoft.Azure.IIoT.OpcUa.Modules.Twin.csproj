@@ -25,7 +25,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Microsoft.Azure.IIoT.OpcUa.Edge" Version="1.0.0-preview006" />
+        <PackageReference Include="Microsoft.Azure.IIoT.OpcUa.Edge" Version="1.0.0-preview007" />
       </ItemGroup>
     </Otherwise>
   </Choose>

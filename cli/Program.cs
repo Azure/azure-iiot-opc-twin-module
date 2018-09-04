@@ -39,9 +39,9 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.Cli {
             string deviceId = null, moduleId = null;
             var configuration = new ConfigurationBuilder()
                 .AddEnvironmentVariables().Build();
-            var cs = Environment.GetEnvironmentVariable("_HUB_CS");
+            var cs = Environment.GetEnvironmentVariable("PCS_IOTHUB_CONNSTRING");
             if (string.IsNullOrEmpty(cs)) {
-                cs = Environment.GetEnvironmentVariable("PCS_IOTHUB_CONNSTRING");
+                cs = Environment.GetEnvironmentVariable("_HUB_CS");
             }
             IIoTHubConfig config = null;
             try {

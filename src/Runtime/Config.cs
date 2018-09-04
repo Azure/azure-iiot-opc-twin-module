@@ -20,7 +20,7 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.Runtime {
         /// </summary>
         private const string EDGEHUB_CONNSTRING_KEY = "EdgeHubConnectionString";
         /// <summary>Hub connection string</summary>
-        public string HubConnectionString =>
+        public string EdgeHubConnectionString =>
             GetString(EDGEHUB_CONNSTRING_KEY);
         /// <summary>Whether to bypass cert validation</summary>
         public bool BypassCertVerification =>
