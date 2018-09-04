@@ -47,7 +47,7 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.Cli {
             try {
                 for (var i = 0; i < args.Length; i++) {
                     switch (args[i]) {
-                        case "-c":
+                        case "-C":
                         case "--connection-string":
                             i++;
                             if (i < args.Length) {
@@ -129,7 +129,7 @@ Operations (Mutually exclusive):
              Clear entire OPC Twin registry content.
 
 Options:
-     -c
+     -C
     --connection-string
              IoT Hub owner connection string to use to connect to IoT hub for
              operations on the registry.
