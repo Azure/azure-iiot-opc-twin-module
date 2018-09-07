@@ -208,7 +208,7 @@ Options:
                 Id = deviceId,
                 ModuleId = moduleId,
                 Capabilities = new DeviceCapabilitiesModel {
-                    iotedge = true
+                    IotEdge = true
                 }
             });
             var cs = await registry.GetConnectionStringAsync(deviceId, moduleId);
