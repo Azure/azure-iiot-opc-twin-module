@@ -11,12 +11,12 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.Runtime {
     using System;
 
     /// <summary>
-    /// Web service configuration - wraps a configuration root
+    /// Wraps a configuration root
     /// </summary>
-    public class Config : ConfigBase, IEdgeConfig {
+    public class Config : ConfigBase, IModuleConfig {
 
         /// <summary>
-        /// Edge module configuration
+        /// Module configuration
         /// </summary>
         private const string EDGEHUB_CONNSTRING_KEY = "EdgeHubConnectionString";
         /// <summary>Hub connection string</summary>

@@ -59,7 +59,7 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin {
 
             using (var hostScope = container.BeginLifetimeScope()) {
                 // BUGBUG: This creates 2 instances one in container one as scope
-                var module = hostScope.Resolve<IEdgeHost>();
+                var module = hostScope.Resolve<IModuleHost>();
                 while (true) {
                     try {
                         await module.StartAsync(
@@ -76,7 +76,7 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin {
                     }
                     catch (Exception ex) {
                         var logger = hostScope.Resolve<ILogger>();
-                        logger.Error("Error during edge run - restarting!", () => ex);
+                        logger.Error("Error during module execution - restarting!", () => ex);
                     }
                     finally {
                         await module.StopAsync();
@@ -100,8 +100,8 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin {
             builder.RegisterInstance(config)
                 .AsImplementedInterfaces().SingleInstance();
 
-            // Register edge framework
-            builder.RegisterModule<EdgeHostModule>();
+            // Register module framework
+            builder.RegisterModule<ModuleFramework>();
 
             // Register opc ua services
             builder.RegisterType<ClientServices>()
@@ -175,8 +175,8 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin {
                     .AsImplementedInterfaces().SingleInstance();
 #endif
 
-                // Register edge host
-                builder.RegisterModule<EdgeHostModule>();
+                // Register module framework
+                builder.RegisterModule<ModuleFramework>();
 
                 // Register twin controllers
                 builder.RegisterType<v1.Controllers.TwinMethodsController>()
