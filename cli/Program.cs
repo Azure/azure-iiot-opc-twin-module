@@ -33,7 +33,6 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.Cli {
         /// <summary>
         /// Entry point
         /// </summary>
-        /// <param name="args">command-line arguments</param>
         public static void Main(string[] args) {
             var op = Op.None;
             string deviceId = null, moduleId = null;
@@ -170,10 +169,6 @@ Options:
         /// <summary>
         /// Get module connection string
         /// </summary>
-        /// <param name="config"></param>
-        /// <param name="deviceId"></param>
-        /// <param name="moduleId"></param>
-        /// <returns></returns>
         private static async Task GetModuleConnectionStringAsync(
             IIoTHubConfig config, string deviceId, string moduleId) {
             if (string.IsNullOrEmpty(deviceId)) {
@@ -192,7 +187,6 @@ Options:
         /// <summary>
         /// Add supervisor
         /// </summary>
-        /// <returns></returns>
         private static async Task AddSupervisorAsync(IIoTHubConfig config,
             string deviceId, string moduleId) {
             if (string.IsNullOrEmpty(deviceId)) {
@@ -218,7 +212,6 @@ Options:
         /// <summary>
         /// Clear all twin module identities
         /// </summary>
-        /// <returns></returns>
         private static async Task ClearSupervisorsAsync(IIoTHubConfig config) {
             var logger = new ConsoleLogger(null, LogLevel.Error);
             var registry = new IoTHubServiceHttpClient(new HttpClient(logger),
@@ -246,7 +239,6 @@ Options:
         /// <summary>
         /// Clear entire registry
         /// </summary>
-        /// <returns></returns>
         private static async Task ClearEntireRegistryAsync(IIoTHubConfig config) {
             var logger = new ConsoleLogger(null, LogLevel.Error);
             var registry = new IoTHubServiceHttpClient(new HttpClient(logger),
