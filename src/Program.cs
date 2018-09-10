@@ -93,11 +93,11 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin {
             var config = new Config(configuration);
             var builder = new ContainerBuilder();
 
-            // Register logger
-            builder.RegisterInstance(config.Logger)
-                .AsImplementedInterfaces().SingleInstance();
             // Register configuration interfaces
             builder.RegisterInstance(config)
+                .AsImplementedInterfaces().SingleInstance();
+            // Register logger
+            builder.RegisterType<ConsoleLogger>()
                 .AsImplementedInterfaces().SingleInstance();
 
             // Register module framework

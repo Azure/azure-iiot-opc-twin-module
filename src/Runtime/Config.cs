@@ -4,16 +4,16 @@
 // ------------------------------------------------------------
 
 namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.Runtime {
+    using Microsoft.Azure.IIoT.Diagnostics;
     using Microsoft.Azure.IIoT.Module.Framework;
     using Microsoft.Azure.IIoT.Module.Framework.Client;
-    using Microsoft.Azure.IIoT.Utils;
     using Microsoft.Extensions.Configuration;
     using System;
 
     /// <summary>
     /// Wraps a configuration root
     /// </summary>
-    public class Config : ConfigBase, IModuleConfig {
+    public class Config : LogConfig, IModuleConfig {
 
         /// <summary>
         /// Module configuration
