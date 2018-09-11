@@ -82,17 +82,17 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.v1.Models {
         }
 
         /// <summary>
-        /// Display name
-        /// </summary>
-        public string DisplayName { get; set; }
-
-        /// <summary>
         /// Type of node
         /// </summary>
         public NodeClass? NodeClass { get; set; }
 
         /// <summary>
-        /// Id of node and parent id.
+        /// Display name
+        /// </summary>
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// Id of node.
         /// (Mandatory).
         /// </summary>
         public string Id { get; set; }
@@ -103,8 +103,9 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.v1.Models {
         public string Description { get; set; }
 
         /// <summary>
-        /// Whether node has children
-        /// (default: false)
+        /// Whether node has children which are defined as
+        /// any forward hierarchical references.
+        /// (default: unknown)
         /// </summary>
         public bool? HasChildren { get; set; }
 
