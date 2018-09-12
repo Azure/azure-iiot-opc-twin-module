@@ -29,6 +29,8 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.v1.Models {
             NoSubtypes = model.NoSubtypes;
             Elevation = model.Elevation == null ? null :
                 new AuthenticationApiModel(model.Elevation);
+            View = model.View == null ? null :
+                new BrowseViewApiModel(model.View);
         }
 
         /// <summary>
@@ -40,6 +42,7 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.v1.Models {
                 NodeId = NodeId,
                 MaxReferencesToReturn = MaxReferencesToReturn,
                 Direction = Direction,
+                View = View?.ToServiceModel(),
                 ReferenceTypeId = ReferenceTypeId,
                 TargetNodesOnly = TargetNodesOnly,
                 NoSubtypes = NoSubtypes,
@@ -58,6 +61,12 @@ namespace Microsoft.Azure.IIoT.OpcUa.Modules.Twin.v1.Models {
         /// (default: forward)
         /// </summary>
         public BrowseDirection? Direction { get; set; }
+
+        /// <summary>
+        /// View to browse
+        /// (default: null = new view = All nodes).
+        /// </summary>
+        public BrowseViewApiModel View { get; set; }
 
         /// <summary>
         /// Reference types to browse.
