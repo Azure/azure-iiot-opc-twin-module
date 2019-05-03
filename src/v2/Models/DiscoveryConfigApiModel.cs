@@ -32,10 +32,10 @@ namespace Microsoft.Azure.IIoT.Modules.OpcUa.Twin.v2.Models {
             NetworkProbeTimeout = model.NetworkProbeTimeout;
             MaxNetworkProbes = model.MaxNetworkProbes;
             PortRangesToScan = model.PortRangesToScan;
-            PortProbeTimeout = PortProbeTimeout;
+            PortProbeTimeout = model.PortProbeTimeout;
             MaxPortProbes = model.MaxPortProbes;
             MinPortProbesPercent = model.MinPortProbesPercent;
-            IdleTimeBetweenScans = IdleTimeBetweenScans;
+            IdleTimeBetweenScans = model.IdleTimeBetweenScans;
             Callbacks = model.Callbacks?
                 .Select(c => c == null ? null : new CallbackApiModel(c))
                 .ToList();
