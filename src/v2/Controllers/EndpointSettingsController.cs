@@ -117,8 +117,7 @@ namespace Microsoft.Azure.IIoT.Modules.OpcUa.Twin.v2.Supervisor {
                                 Type = _credentialType,
                             },
                     Url = _endpointUrl,
-                    AlternativeUrls = _alternativeUrls == null ? null :
-                        _alternativeUrls.DecodeAsList().ToHashSetSafe(),
+                    AlternativeUrls = _alternativeUrls?.DecodeAsList().ToHashSetSafe(),
                     ServerThumbprint = _serverThumbprint,
                     ClientCertificate = _clientCertificate
                 });
